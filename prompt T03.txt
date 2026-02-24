@@ -1,0 +1,42 @@
+// Nama : Nicolas J Grace Butarbutar
+// NIM : 12S24038
+
+1. Saya mempunyai sebuah tugas sebuah pemrograman berbasis objek. Saya ingin kamu mendukung dan membantu saya dalam mengerjakan permasalahan ini. Pakailah bahasa java dalam pemrograman kali ini.
+
+2. Buatlah sebuah sistem yang dapat mendukung operasional sehari-hari di Laundry Del.
+Dengan memiliki komponen :
+- Nama Mahasiswa
+- Asrama mahasiswa
+- Jumlah total pakaian mahasiswa
+- Waktu penjemputan LaundryBag
+- Waktu pengantaran LaundryBag
+
+3. Buat file ini dengan nama file Driver3.java
+
+4. Jemput dan Pengantaran ini dalam bentuk Hari, misal Senin, Jumat dan lain lain
+
+5. Buat dengan pemrograman berbasis objek
+
+6. Asrama di Del ada :
+- Rusun Satu
+- Max Plank
+- Marie Curie
+- Archimedes
+- Louis Pasteur
+- Simon Laplace
+- Ada Lovelace
+- Nikola Tesla
+
+7. Perbaiki error dengan buat file ini menjadi Driver3.java
+
+8. Buat dengan bahasa java serta menurut OOP. Perbaiki error yang saya dapatkan tadi.
+
+9. Masih tidak bisa, perbaiki error nya
+
+10. Apa tidak ada import import semacamnya?
+
+11. Buat program tersebut saya dapat menginput, tidak langsung keluar output nya.
+
+12. Menurut kamu, apakah ini sudah bagus? apakah ada perlu tambahan semacamnya?
+
+13. Bisa kamu tambahkan ketiga nya dalam pemrograman tadi?

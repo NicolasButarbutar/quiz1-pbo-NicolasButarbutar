@@ -1,0 +1,39 @@
+// Nama : Nicolas J Grace Butarbutar
+// NIM : 12S24038
+
+1. Saya mempunyai sebuah permasalahan dalam Penjumlahan Nilai Mahasiswa. Bisakah kamu membantu saya dalam mengerjakan permasalahan ini dengan materi OOP dalam penggunaan bahasa Java.
+
+2. Buatlah file ini dalam bentuk Driver2.java
+
+3. Data nilai siswa disimpan dalam sebuah rak fisik yang tersusun rapat. Perhatikan pola penyimpanan pada gambar di bawah ini untuk memahami bagaimana kelompok siswa dipisahkan. Input:
+- Jumlah total data (N).
+- Deret nilai (n1, n2, …, n).
+- Kode kelompok siswa
+Tugas Buatlah program yang mampu menentukan total nilai hanya untuk kelompok yang diminta.
+
+4. Kode program tersebut sudah sesuai dengan materi OOP atau Pemrograman Berbasis Objek?
+
+5. Apa maksud dari error ini? bisakah kamu memperbaiki nya, kemudian buat code tersebut dengan penamaan file nya Driver2.java
+
+6. Code program ini sudah sesuai dengan permasalahan yang saya berikan diatas tadi?
+
+7. Bagaimiana jika penyimapanan nya menurut jenis kelamin?
+
+8. Mana yang lebih baik? sesuai GanjilGenap atau JenisKelamin?
+
+9. Ini dalam bentuk driver, bagaimana jika dalam bentuk Model?
+
+10. Apa perbedaan dari kedua itu?
+
+11. Berikan codingan dalam model nya yang sesuai dengan codingan terakhir yang kamu kirim.
+
+12. Dalam file solution.java
+
+13. package model;
+
+public class solution {
+    
+}
+
+Lanjut dari program ini.
+

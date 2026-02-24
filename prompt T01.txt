@@ -1,0 +1,191 @@
+// Nama : Nicolas J Grace Butarbutar
+// NIM : 12S24038
+
+1. Saya mempunyai sebuah tugas, bisakah kamu membantu saya untuk mengerjakan tugas ini dengan materi Pemrograrman Berbasih Objek atau OOP. Dengan menggunakan bahasa java.
+
+2. Apakah kamu bisa membaca file ini?
+
+3. Ini adalah beberapa tambahan untuk gambar.
+
+4. Buat dalam bahasa java.
+
+5. Buat dalam bahasa java dengan menggunakan materi yang sesuai dengan OOP.
+
+6. // NAMA : Nicolas J Grace Butarbutar
+// NIM : 12S24038
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+// 1. CLASS MENU (Merepresentasikan satu item makanan)
+class Menu {
+    private String kode;
+    private String nama;
+    private double harga;
+
+    // Constructor
+    public Menu(String kode, String nama, double harga) {
+        this.kode = kode;
+        this.nama = nama;
+        this.harga = harga;
+    }
+
+    // Getter methods (Encapsulation)
+    public String getKode() { return kode; }
+    public String getNama() { return nama; }
+    public double getHarga() { return harga; }
+}
+
+// 2. CLASS ORDER (Merepresentasikan pesanan yang mencakup Menu dan Porsi)
+class Order {
+    private Menu menu;
+    private int porsiButet;
+
+    public Order(Menu menu, int porsiButet) {
+        this.menu = menu;
+        this.porsiButet = porsiButet;
+    }
+
+    // Menghitung total porsi berdasarkan perbandingan berat badan (Ucok 100kg, Butet 50kg)
+    // Porsi Ucok = 2 * Porsi Butet. Total Porsi = 3 * Porsi Butet.
+    public int getTotalPorsi() {
+        return porsiButet * 3;
+    }
+
+    public double getSubTotal() {
+        return getTotalPorsi() * menu.getHarga();
+    }
+
+    public Menu getMenu() { return menu; }
+}
+
+// 3. CLASS RESTORAN (Mengelola daftar menu yang tersedia)
+class Restoran {
+    private Map<String, Menu> daftarMenu;
+
+    public Restoran() {
+        daftarMenu = new HashMap<>();
+        inisialisasiMenu();
+    }
+
+    private void inisialisasiMenu() {
+        daftarMenu.put("NGS", new Menu("NGS", "Nasi Goreng Spesial", 15000));
+        daftarMenu.put("AP", new Menu("AP", "Ayam Penyet", 20000));
+        daftarMenu.put("SA", new Menu("SA", "Sate Ayam (10 Tusuk)", 25000));
+        daftarMenu.put("BU", new Menu("BU", "Bakso Urat", 18000));
+        daftarMenu.put("MAP", new Menu("MAP", "Mie Ayam Pangsit", 15000));
+        daftarMenu.put("GG", new Menu("GG", "Gado-Gado", 15000));
+        daftarMenu.put("SAM", new Menu("SAM", "Soto Ayam", 17000));
+        daftarMenu.put("RD", new Menu("RD", "Rendang Daging", 25000));
+        daftarMenu.put("IB", new Menu("IB", "Ikan Bakar", 35000));
+        daftarMenu.put("NUK", new Menu("NUK", "Nasi Uduk Komplit", 20000));
+    }
+
+    public Menu cariMenu(String kode) {
+        return daftarMenu.get(kode.toUpperCase());
+    }
+}
+
+// 4. CLASS TRANSAKSI (Mengelola seluruh pesanan dan mencetak struk)
+class Transaksi {
+    private List<Order> daftarPesanan;
+
+    public Transaksi() {
+        daftarPesanan = new ArrayList<>();
+    }
+
+    public void tambahPesanan(Order order) {
+        daftarPesanan.add(order);
+    }
+
+    public double hitungTotal() {
+        double total = 0;
+        for (Order order : daftarPesanan) {
+            total += order.getSubTotal();
+        }
+        return total;
+    }
+
+    public void cetakStruk() {
+        System.out.println("\nMenu                Porsi   Harga   Total");
+        System.out.println("==========================================");
+        
+        for (Order order : daftarPesanan) {
+            System.out.printf("%-19s %-7d %-7.0f %-10.0f\n", 
+                order.getMenu().getNama(), 
+                order.getTotalPorsi(), 
+                order.getMenu().getHarga(), 
+                order.getSubTotal());
+        }
+        
+        System.out.println("==========================================");
+        double totalPembayaran = hitungTotal();
+        System.out.printf("Total Pembayaran                    %.0f\n", totalPembayaran);
+        
+        // Memeriksa kupon jika ada
+        cekKupon(totalPembayaran);
+    }
+
+    private void cekKupon(double total) {
+        String kupon = "";
+        // Logika kupon dinilai dari kelipatan 100rb sesuai cerita
+        if (total >= 500000) kupon = "Kupon Hitam (Diskon 25%)";
+        else if (total >= 400000) kupon = "Kupon Hijau (Diskon 20%)";
+        else if (total >= 300000) kupon = "Kupon Merah (Diskon 15%)";
+        else if (total >= 200000) kupon = "Kupon Kuning (Diskon 10%)";
+        else if (total >= 100000) kupon = "Kupon Biru (Diskon 5%)";
+
+        if (!kupon.isEmpty()) {
+            System.out.println("\nSelamat! Anda mendapatkan " + kupon);
+        }
+    }
+}
+
+// 5. MAIN CLASS (Menerima Input & Menjalankan Program)
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Restoran restoran = new Restoran();
+        Transaksi transaksi = new Transaksi();
+
+        while (true) {
+            // Input kode menu
+            String kodeInput = scanner.nextLine().trim();
+            
+            // Berhenti jika input adalah END
+            if (kodeInput.equalsIgnoreCase("END")) {
+                break;
+            }
+
+            Menu menuDipilih = restoran.cariMenu(kodeInput);
+            
+            if (menuDipilih != null) {
+                // Input porsi Butet
+                int porsiButet = Integer.parseInt(scanner.nextLine().trim());
+                
+                // Buat objek Order dan masukkan ke Transaksi
+                Order pesananBaru = new Order(menuDipilih, porsiButet);
+                transaksi.tambahPesanan(pesananBaru);
+            } else {
+                System.out.println("Kode menu tidak ditemukan. Silakan coba lagi.");
+            }
+        }
+
+        // Cetak hasil akhir / output
+        transaksi.cetakStruk();
+        scanner.close();
+    }
+} 
+
+Buat dalam penamaan file nya itu T01.java
+
+7. Ganti menjadi Driver1.java
+
+8. Apa yang salah? apa command untuk compile dan running nya.
+
+9. Ada yang salah pada program mu? sehingga muncul begini
+
+10. Kenapa tidak sesuai input dengan output? misal saya buat NGS dengan 1 porsi menjadi 3 porsi di output
