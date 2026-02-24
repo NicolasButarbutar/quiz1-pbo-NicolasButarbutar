@@ -8,9 +8,8 @@ import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/* NAMA : Nicolas J Grace Butarbutar
-   NIM  : 12S24038
-*/
+// NAMA : Nicolas J Grace Butarbutar
+// NIM  : 12S24038
 
 public class solution {
 
