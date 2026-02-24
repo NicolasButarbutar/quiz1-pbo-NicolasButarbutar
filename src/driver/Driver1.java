@@ -162,4 +162,4 @@ class Transaksi {
             System.out.println("\nSelamat! Anda mendapatkan " + kupon);
         }
     }
-}
+} 
