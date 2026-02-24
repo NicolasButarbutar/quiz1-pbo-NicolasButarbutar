@@ -188,4 +188,4 @@ Buat dalam penamaan file nya itu T01.java
 
 9. Ada yang salah pada program mu? sehingga muncul begini
 
-10. Kenapa tidak sesuai input dengan output? misal saya buat NGS dengan 1 porsi menjadi 3 porsi di output 
+10. Kenapa tidak sesuai input dengan output? misal saya buat NGS dengan 1 porsi menjadi 3 porsi di output.
